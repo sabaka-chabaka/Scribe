@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Scribe</title>
+
+
+  <link rel="stylesheet" href="/src/styles.css" />
+</head>
+
+<body>
+<nav id="menuBar">
+
+  <div class="menu">
+    <button class="menu-button">File</button>
+    <div class="dropdown">
+      <button id="new">New</button>
+      <button id="open">Open</button>
+      <button id="save">Save</button>
+      <button id="newChapter">New Chapter</button>
+    </div>
+  </div>
+
+  <div class="menu">
+    <button class="menu-button">Theme</button>
+    <div class="dropdown">
+      <button id="lightMode">Light</button>
+      <button id="darkMode">Dark</button>
+    </div>
+  </div>
+
+</nav>
+
+
+
+<div id="layout">
+  <aside id="sidebar">
+    <h2>Chapters</h2>
+    <ul id="chapterList"></ul>
+  </aside>
+  <div id="editor" contenteditable="true"></div>
+</div>
+
+
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+:root {
+    /* Light theme */
+    --bg: lightblue;
+    --text: #222;
+
+    --menu-bg: darkgray;
+    --menu-text: #000;
+    --menu-border: #ccc;
+
+    --dropdown-bg: white;
+    --dropdown-hover: #e0e0e0;
+
+    --sidebar-bg: #f5f5f5;
+    --sidebar-border: #ccc;
+
+    --editor-bg: white;
+    --editor-text: #222;
+}
+
+body.dark {
+    /* Dark theme */
+    --bg: #1e1e1e;
+    --text: #ddd;
+
+    --menu-bg: #2a2a2a;
+    --menu-text: #eee;
+    --menu-border: #444;
+
+    --dropdown-bg: #2a2a2a;
+    --dropdown-hover: #3a3a3a;
+
+    --sidebar-bg: #252525;
+    --sidebar-border: #333;
+
+    --editor-bg: #1e1e1e;
+    --editor-text: #ddd;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+#menuBar {
+    background: var(--menu-bg);
+    border-bottom: 1px solid var(--menu-border);
+    padding: 6px 10px;
+    display: flex;
+    gap: 20px;
+    user-select: none;
+}
+
+#menuBar summary {
+    cursor: pointer;
+    padding: 4px 6px;
+}
+
+#menuBar button {
+    display: block;
+    width: 100%;
+    padding: 6px 10px;
+    border: none;
+    background: var(--dropdown-bg);
+    color: var(--menu-text);
+    text-align: left;
+    cursor: pointer;
+}
+
+#menuBar button:hover {
+    background: var(--dropdown-hover);
+}
+
+#layout {
+    display: flex;
+    height: calc(100vh - 40px);
+}
+
+#sidebar {
+    width: 220px;
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--sidebar-border);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#sidebar h2 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+#chapterList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#chapterList li {
+    padding: 8px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#chapterList li:hover {
+    background: var(--dropdown-hover);
+}
+
+#chapterList li.active {
+    background: var(--dropdown-hover);
+    font-weight: bold;
+}
+
+#editor {
+    flex: 1;
+    padding: 20px;
+    outline: none;
+    border: none;
+    background: var(--editor-bg);
+    color: var(--editor-text);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-y: auto;
+}
+
+
+.menu {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    color: var(--menu-text);
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--dropdown-bg);
+    border: 1px solid var(--menu-border);
+    display: none;
+    flex-direction: column;
+    z-index: 999;
+}
+
+.dropdown.open {
+    display: flex;
+}
+
+.dropdown button {
+    background: var(--dropdown-bg);
+    border: none;
+    padding: 8px 12px;
+    text-align: left;
+    cursor: pointer;
+    color: var(--menu-text);
+}
+
+.dropdown button:hover {
+    background: var(--dropdown-hover);
+}
